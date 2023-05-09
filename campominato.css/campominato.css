@@ -42,7 +42,7 @@ main{
     flex-wrap: wrap;
 }
 
-#main-container > .square {
+#main-container > .cella {
     width: calc(100% / 10);
     border: solid 2px black;
     height: 100px;
