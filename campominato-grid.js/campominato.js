@@ -16,29 +16,28 @@ const selectDifficulty =document.getElementById ("select-difficulty")
 // L’utente clicca su un bottone che genererà una griglia di gioco quadrata.
 play.addEventListener('click',
     function () {
+        containerCelle.innerHTML = " ";
         // select che fornisca una scelta tra tre diversi livelli di difficoltà:
-        let numRighe;
-        let numColonne;
+    let numCelle ;
+    let classe ;
     const difficulty = selectDifficulty.value;
 
     if (difficulty === "easy") { //con difficoltà 1 => 100 caselle divise in 10 caselle per 10 righe
-        numRighe = 10;
-        numColonne = 10;
+        numCelle = 100;
+        classe = "container-numcelle-easy";
     } else if (difficulty === "normal") { //con difficoltà 2 => 81 caselle divise in 9 caselle per 9 righe;
-        numRighe = 9;
-        numColonne = 9;
+        numCelle = 81;
+        classe = "container-numcelle-normal";
     } else if (difficulty === "hard") { //con difficoltà 3 => 49 caselle divise in 7 caselle per 7 righe;
-        numRighe = 7;
-        numColonne = 7;
+        numCelle = 49;
+        classe = "container-numcelle-hard";
     }
-
-  const numCelle = numRighe * numColonne;
-
+        console.log(classe);
         for (let i = 1 ; i <= numCelle; i++){ // Ogni cella ha un numero progressivo, da 1 a 100.
             let cella = document.createElement("div")
-            cella.className = 'cella';
+            cella.className = 'cella ' + classe;
             cella.innerText = i;
-            containerCelle.appendChild(cella);
+            containerCelle.append(cella);
 
             // Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
             cella.addEventListener('click',

@@ -50,7 +50,6 @@ main{
 }
 
 #main-container > .cella {
-    width: calc(100% / 10);
     border: solid 2px black;
     height: auto;
     display: flex;
@@ -60,6 +59,18 @@ main{
 
 .bg-cell {
     background-color: lightblue;
+}
+
+.container-numcelle-easy{
+    width: calc(100% / 10);
+}
+
+.container-numcelle-normal{
+    width: calc(100% / 9);
+}
+
+.container-numcelle-hard{
+    width: calc(100% / 7);
 }
 
 /* regole footer  */
